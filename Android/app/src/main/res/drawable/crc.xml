@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="80dp"
+    android:viewportWidth="150"
+    android:viewportHeight="80">
+
+    <path
+        android:fillColor="#002b7f"
+        android:strokeWidth="1"
+        android:pathData="M0 0L0 12L150 12L150 0L0 0z" />
+    <path
+        android:fillColor="#000468"
+        android:strokeWidth="1"
+        android:pathData="M0 12C4.46874 13.8752 10.1913 13 15 13L45 13L150 13C145.531 11.1248 139.809 12 135 12L105 12L0 12z" />
+    <path
+        android:fillColor="#98a2c7"
+        android:strokeWidth="1"
+        android:pathData="M0 13C4.46874 14.8752 10.1913 14 15 14L45 14L150 14C145.531 12.1248 139.809 13 135 13L105 13L0 13z" />
+    <path
+        android:fillColor="#ffffff"
+        android:strokeWidth="1"
+        android:pathData="M0 14L0 26L150 26L150 14L0 14z" />
+    <path
+        android:fillColor="#eca4aa"
+        android:strokeWidth="1"
+        android:pathData="M0 26C4.46874 27.8752 10.1913 27 15 27L45 27L150 27C145.531 25.1248 139.809 26 135 26L105 26L0 26z" />
+    <path
+        android:fillColor="#c50001"
+        android:strokeWidth="1"
+        android:pathData="M0 27C4.46873 28.8752 10.1913 28 15 28L45 28L150 28C145.531 26.1248 139.809 27 135 27L105 27L0 27z" />
+    <path
+        android:fillColor="#ce1126"
+        android:strokeWidth="1"
+        android:pathData="M0 28L0 52L150 52L150 28L0 28z" />
+    <path
+        android:fillColor="#c50000"
+        android:strokeWidth="1"
+        android:pathData="M0 52C4.46874 53.8752 10.1913 53 15 53L45 53L150 53C145.531 51.1248 139.809 52 135 52L105 52L0 52z" />
+    <path
+        android:fillColor="#e99a9f"
+        android:strokeWidth="1"
+        android:pathData="M0 53C4.46874 54.8752 10.1913 54 15 54L45 54L150 54C145.531 52.1248 139.809 53 135 53L105 53L0 53z" />
+    <path
+        android:fillColor="#ffffff"
+        android:strokeWidth="1"
+        android:pathData="M0 54L0 66L150 66L150 54L0 54z" />
+    <path
+        android:fillColor="#a3accd"
+        android:strokeWidth="1"
+        android:pathData="M0 66C4.46874 67.8752 10.1913 67 15 67L45 67L150 67C145.531 65.1248 139.809 66 135 66L105 66L0 66z" />
+    <path
+        android:fillColor="#00076a"
+        android:strokeWidth="1"
+        android:pathData="M0 67C4.46874 68.8752 10.1913 68 15 68L45 68L150 68C145.531 66.1248 139.809 67 135 67L105 67L0 67z" />
+    <path
+        android:fillColor="#002b7f"
+        android:strokeWidth="1"
+        android:pathData="M0 68L0 80L150 80L150 68L0 68z" />
+</vector>

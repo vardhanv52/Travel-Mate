@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="80dp"
+    android:viewportWidth="150"
+    android:viewportHeight="80">
+
+    <path
+        android:fillColor="#fcd116"
+        android:strokeWidth="1"
+        android:pathData="M0 0L0 38L150 38L150 0L0 0z" />
+    <path
+        android:fillColor="#ffe00a"
+        android:strokeWidth="1"
+        android:pathData="M0 38C4.46874 39.8752 10.1913 39 15 39L45 39L150 39C145.531 37.1248 139.809 38 135 38L105 38L0 38z" />
+    <path
+        android:fillColor="#e1c223"
+        android:strokeWidth="1"
+        android:pathData="M0 39C4.46874 40.8752 10.1913 40 15 40L45 40L150 40C145.531 38.1248 139.809 39 135 39L105 39L0 39z" />
+    <path
+        android:fillColor="#023894"
+        android:strokeWidth="1"
+        android:pathData="M0 40C4.46874 41.8752 10.1913 41 15 41L45 41L150 41C145.531 39.1248 139.809 40 135 40L105 40L0 40z" />
+    <path
+        android:fillColor="#002f9a"
+        android:strokeWidth="1"
+        android:pathData="M0 41C4.46873 42.8752 10.1913 42 15 42L45 42L150 42C145.531 40.1248 139.809 41 135 41L105 41L0 41z" />
+    <path
+        android:fillColor="#003893"
+        android:strokeWidth="1"
+        android:pathData="M0 42L0 58L150 58L150 42L0 42z" />
+    <path
+        android:fillColor="#003c9e"
+        android:strokeWidth="1"
+        android:pathData="M0 58C4.46874 59.8752 10.1913 59 15 59L45 59L150 59C145.531 57.1248 139.809 58 135 58L105 58L0 58z" />
+    <path
+        android:fillColor="#1b3487"
+        android:strokeWidth="1"
+        android:pathData="M0 59C4.46874 60.8752 10.1913 60 15 60L45 60L150 60C145.531 58.1248 139.809 59 135 59L105 59L0 59z" />
+    <path
+        android:fillColor="#d90f20"
+        android:strokeWidth="1"
+        android:pathData="M0 60L0 62L150 62L150 60L0 60z" />
+    <path
+        android:fillColor="#ce1126"
+        android:strokeWidth="1"
+        android:pathData="M0 62L0 80L150 80L150 62L0 62z" />
+</vector>
