@@ -381,4 +381,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_widget">Add World Clock Widget</string>
     <string name="configure">Select Timezone For Clock Widget</string>
+
+    <string name="google_maps_key">AIzaSyAFHiebt_hc8nUrR-x8V9bdhQLscalNWpY</string>
+
 </resources>

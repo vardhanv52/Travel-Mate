@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -85,6 +86,8 @@ public class FinalCityInfoActivity extends AppCompatActivity
     LinearLayout cityVisitedLayout;
     @BindView(R.id.ll_city_map)
     LinearLayout cityMap;
+    @BindView(R.id.city_directions)
+    LinearLayout directions;
 
     private int mDotsCount;
     private ImageView[] mDots;
@@ -159,6 +162,7 @@ public class FinalCityInfoActivity extends AppCompatActivity
         cityHistory.setOnClickListener(this);
         cityMap.setOnClickListener(this);
         favourite.setOnClickListener(this);
+        directions.setOnClickListener(this);
     }
 
     @Override
@@ -207,6 +211,11 @@ public class FinalCityInfoActivity extends AppCompatActivity
                 break;
             case R.id.image_favourite:
                 toggleFavouriteCity();
+                break;
+            case R.id.city_directions:
+                intent = new Intent(FinalCityInfoActivity.this, Directions.class);
+                intent.putExtra("city", mCity);
+                startActivity(intent);
                 break;
         }
     }

@@ -33,6 +33,9 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.library.BuildConfig;
+import org.osmdroid.tileprovider.constants.OpenStreetMapTileProviderConstants;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -130,6 +133,7 @@ public class PlacesOnMapActivity extends AppCompatActivity implements
 
         getPlaces();
 
+        Configuration.getInstance().setUserAgentValue(BuildConfig.APPLICATION_ID);
         initMap();
 
         setTitle("Places");

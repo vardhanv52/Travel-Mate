@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- suppress ALL -->
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="io.github.project_travel_mate">
@@ -34,6 +34,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:fullBackupContent">
+        <activity android:name=".destinations.description.Directions"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
         <activity
             android:name=".mytrips.TripImageActivity"
             android:configChanges="orientation|screenSize"
@@ -125,8 +132,9 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".ProfileActivity"
-                  android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ProfileActivity"
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".friend.FriendsProfileActivity" />
         <activity android:name=".notifications.NotificationsActivity" />
         <activity

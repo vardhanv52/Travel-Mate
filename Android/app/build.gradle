@@ -40,7 +40,7 @@ repositories {
 
 configurations {
     cleanedAnnotations
-    compile.exclude group: 'org.jetbrains' , module:'annotations'
+    compile.exclude group: 'org.jetbrains', module: 'annotations'
 }
 
 dependencies {
@@ -107,6 +107,8 @@ dependencies {
 
     // World Country flag
     implementation 'com.github.blongho:world-country-data:v1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }
 
 preBuild.dependsOn('checkstyle')
