@@ -159,12 +159,7 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
         friendEmail.setThreshold(1);
         setTitle(mTrip.getName());
 
-        publicToggleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateTripPrivacy();
-            }
-        });
+        publicToggleButton.setOnClickListener(v -> updateTripPrivacy());
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
