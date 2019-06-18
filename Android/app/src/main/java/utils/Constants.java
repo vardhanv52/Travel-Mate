@@ -104,4 +104,7 @@ public class Constants {
     //Min number of launches before Quotes
     public static final int LAUNCHES_UNTIL_SHOW_QUOTE = 1;
 
+    public static String PreferencesName = "Travel_Mate_Preferences",
+            FriendsList = "FRIENDS_LIST";
+
 }

@@ -31,12 +31,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.common.util.Strings;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -60,6 +62,7 @@ import io.github.project_travel_mate.FullScreenImage;
 import io.github.project_travel_mate.R;
 import io.github.project_travel_mate.destinations.description.FinalCityInfoActivity;
 import io.github.project_travel_mate.friend.FriendsProfileActivity;
+import io.reactivex.internal.operators.single.SingleNever;
 import objects.City;
 import objects.Trip;
 import objects.User;
@@ -68,7 +71,9 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import utils.Constants;
 import utils.TravelmateSnackbars;
+import utils.Utils;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -121,6 +126,10 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
     LinearLayout addMeToTrip;
     @BindView(R.id.public_trip_layout)
     RelativeLayout publicPrivateInfo;
+    @BindView(R.id.friendsSpinner)
+    Spinner friends;
+    @BindView(R.id.spinnerRL)
+    RelativeLayout spinnerRL;
 
     private String mFriendId = null;
     private String mFriendDeleteId = null;
@@ -155,8 +164,8 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
         showIcon.setVisibility(GONE);
         editTrip.setVisibility(GONE);
         mHandler = new Handler(Looper.getMainLooper());
-        friendEmail.clearFocus();
-        friendEmail.setThreshold(1);
+        /*friendEmail.clearFocus();
+        friendEmail.setThreshold(1);*/
         setTitle(mTrip.getName());
 
         publicToggleButton.setOnClickListener(v -> updateTripPrivacy());
@@ -167,6 +176,23 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String frnds = Utils.getUserData(this, Constants.FriendsList).trim();
+        List<String> frndsList = new ArrayList<>();
+        if (frnds.length() == 0)
+            frndsList.add("No Friends Found");
+        else {
+            frndsList.add("Please select a friend");
+            try {
+                JSONArray array = new JSONArray(frnds);
+                for (int i = 0; i < array.length(); i++)
+                    frndsList.add(array.getJSONObject(i).getString("name"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, frndsList);
+        friends.setAdapter(adapter);
 
         editTrip.setOnClickListener(v -> {
             if (!mIsTripNameEdited) {
@@ -197,7 +223,6 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
                 }
             }
         });
-
     }
 
     @OnClick(R.id.city_image)
@@ -621,7 +646,7 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
 
                             if (tripFriends.size() == 0) {
                                 addNewFriend.setVisibility(GONE);
-                                friendEmail.setVisibility(GONE);
+                            //    friendEmail.setVisibility(GONE);
                                 noFriendTitle.setVisibility(VISIBLE);
                                 noFriendTitle.setTypeface(null, Typeface.BOLD);
                                 String mystring = getString(R.string.friends_title);
@@ -631,7 +656,9 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
                                 noFriendTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15f);
 
                                 addNewFriend.setVisibility(VISIBLE);
-                                friendEmail.setVisibility(VISIBLE);
+                             //   friendEmail.setVisibility(VISIBLE);
+                                spinnerRL.setVisibility(VISIBLE);
+
                                 addMeToTrip.setVisibility(GONE);
                                 publicPrivateInfo.setVisibility(VISIBLE);
 
@@ -652,7 +679,8 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
 
                                 if (isUserPartofTrip) { //user is part of the trip
                                     addNewFriend.setVisibility(VISIBLE);
-                                    friendEmail.setVisibility(VISIBLE);
+                                //    friendEmail.setVisibility(VISIBLE);
+                                    spinnerRL.setVisibility(VISIBLE);
                                     addMeToTrip.setVisibility(GONE);
                                     publicPrivateInfo.setVisibility(VISIBLE);
 
@@ -668,7 +696,7 @@ public class MyTripInfoActivity extends AppCompatActivity implements TravelmateS
                                     //user is not a part of trip
                                     addMeToTrip.setVisibility(VISIBLE);
                                     addNewFriend.setVisibility(GONE);
-                                    friendEmail.setVisibility(GONE);
+                                //    friendEmail.setVisibility(GONE);
                                 }
 
 

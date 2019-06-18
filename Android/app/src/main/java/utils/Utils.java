@@ -1,7 +1,9 @@
 package utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Base64;
@@ -20,6 +22,8 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
+    private static ProgressDialog progressDialog;
+
     // validating email id
     public static boolean isValidEmail(String email) {
 
@@ -28,6 +32,47 @@ public class Utils {
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
+    }
+
+    public static void showProgressDialog(Context context) {
+        try {
+            dismissProgressDialog();
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setMessage("Please wait...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void dismissProgressDialog() {
+        if (progressDialog != null)
+            progressDialog.dismiss();
+    }
+
+    public static void storeUserData(Context context, String key, String value) {
+        if (key != null && value != null) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences(
+                    Constants.PreferencesName, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(key, value);
+            editor.apply();
+        }
+    }
+
+    public static String getUserData(Context context, String key) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                Constants.PreferencesName, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(key, "");
+    }
+
+    public static void clearUserData(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                Constants.PreferencesName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
     }
 
     public static String readStream(InputStream in) {

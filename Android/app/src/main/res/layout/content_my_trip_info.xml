@@ -167,18 +167,33 @@
                 android:visibility="gone"
                 tools:targetApi="lollipop" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:id="@+id/spinnerRL"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_hollow_black_border">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/friendsSpinner" />
+
+            </RelativeLayout>
+
             <TextView
                 android:id="@+id/add_new_friend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/round_shape"
-                android:orientation="horizontal"
+                android:gravity="center_horizontal"
                 android:padding="15dp"
                 android:text="@string/prompt_add_friend"
                 android:textColor="@color/white"
-                android:visibility="gone" />
-
+                android:visibility="gone"/>
 
             <RelativeLayout
                 android:visibility="gone"
@@ -211,8 +226,8 @@
                     android:textColor="@color/white"
                     android:textOn="@string/public_trip_toggle_on"
                     android:textOff="@string/public_trip_toggle_off" />
-            </RelativeLayout>
 
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/addme_to_trip"
@@ -254,4 +269,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>

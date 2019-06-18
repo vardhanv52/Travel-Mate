@@ -60,6 +60,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import utils.DailyQuotesManager;
+import utils.Utils;
 
 import static utils.Constants.API_LINK_V2;
 import static utils.Constants.AUTHORIZATION;
@@ -262,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                             .edit()
                                             .putString(USER_TOKEN, null)
                                             .apply();
+                                    Utils.clearUserData(MainActivity.this);
                                     Intent i = LoginActivity.getStartIntent(MainActivity.this);
                                     startActivity(i);
                                     finish();
